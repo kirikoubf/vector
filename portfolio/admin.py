@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Portfolio, Projet, Commentaire, Message
+from .models import Portfolio, Projet, Commentaire, Message, Actualite
 # Register your models here.
 class PortfolioAdmin(admin.ModelAdmin):
     list_display = ('nom', 'description', 'slug', 'categorie', 'image', 'date')
@@ -13,8 +13,12 @@ class CommentaireAdmin(admin.ModelAdmin):
 class MessageAdmin(admin.ModelAdmin):
     list_display = ('nom', 'identifiant', 'message', 'date')
 
+class ActualiteAdmin(admin.ModelAdmin):
+    list_display = ('titre', 'image', 'description', 'date')
+
 
 admin.site.register(Portfolio, PortfolioAdmin)
 admin.site.register(Projet, ProjetAdmin)
 admin.site.register(Commentaire, CommentaireAdmin)
 admin.site.register(Message, MessageAdmin)
+admin.site.register(Actualite, ActualiteAdmin)

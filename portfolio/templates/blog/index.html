@@ -27,6 +27,17 @@
    .copyright {
       margin-bottom: 0;
    }
+   .custom-button {
+      padding: 10px 20px; /* Ajuster les valeurs pour la taille souhaitée */
+      background-color: #5f88e0; /* Bleu clair */
+      border: none;
+      border-radius: 0; /* Pas de coins arrondis */
+      color: white; /* Texte en blanc */
+      transition: background-color 0.3s;
+   }
+   .custom-button:hover {
+      background-color: #01143e; /* Couleur au survol */
+   }
    </style>
    <header>
       <div class="container">
@@ -44,7 +55,7 @@
                   <li><a href="#services">Services</a></li>
                   <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
                   <li><a href="#blog">Projet</a></li>
-                  <li><a href="#">Actualite</a></li>
+                  <li><a href="{% url 'actualites' %}">Actualite</a></li>
                   <li><a href="{% url 'message' %}">Contact</a></li>
                </ul>
             </div>
@@ -114,11 +125,11 @@
                         </div>
                      </div>
                      <div class="social">
-                        <a href=""><i class="fa fa-facebook"></i></a>
-                        <a href=""><i class="fa fa-twitter"></i></a>
-                        <a href=""><i class="fa fa-instagram"></i></a>
-                        <a href=""><i class="fa fa-github"></i></a>
-                        <a href=""><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100092401990193"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com/adamasana226?t=ocA6VOo6UNkzi7Fb4Qgw8A&s=08"><i class="fa fa-twitter"></i></a>
+                        <a href="https://instagram.com/dems1817?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"><i class="fa fa-instagram"></i></a>
+                        <a href="https://github.com/Adamasana"><i class="fa fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/adama-sana-6a5556263"><i class="fa fa-linkedin"></i></a>
                      </div>
                   </div>
                </div>
@@ -258,8 +269,8 @@
          <div class="row">
             <div class="testimonials-content">
                <div class="testimonials-box">
-                  {% for commentaire in commentaires %}
-                  <div class="testimonials-img">
+               {% for commentaire in commentaires %}
+                  <div class="testimonials-img" style="height:auto">
                       <div class="test-img">
                           {% if commentaire.image %}
                               <img src="{{ commentaire.image.url }}" />
@@ -271,7 +282,7 @@
                       <div class="testimonials-text">
                           <h6>{{ commentaire.nom }}</h6>
                           <p>{{ commentaire.commentaire }}</p>
-                          <p style="margin-top: 10px;">{{ commentaire.date }}</p>
+                          <p style="margin-top: 10px; text-align:right;">{{ commentaire.date }}</p>
                       </div>
                   </div>
               {% endfor %}
@@ -292,8 +303,8 @@
          <div class="contact-form" style="margin-bottom: 10px;">
             <div class="row">
                <div class="contact-text">
-                  <h2>Laissez un commentaire</h2>
-                  <p>Le nom, l'image et le message seront affichés. Cependant, viablesous n'êtes pas obligé de mettre votre propre photo.</p>
+                  <h2 style="font-size:23px; margin-bottom:10px;">Laissez un commentaire</h2>
+                  <p>Le nom, l'image et le message seront affichés. Cependant, vous n'êtes pas obligé de mettre votre propre image.</p>
                </div>
             </div>
             
@@ -306,7 +317,7 @@
                </div>
                <div class="row space-between">
                   <div class="col-6">
-                     <input type="text" class="form-control" name="telephone" placeholder="Téléphone" maxlength="15" required />
+                     <input type="text" class="form-control" name="telephone" placeholder="Téléphone ou Email" maxlength="25" required />
                   </div>
                   <div class="col-6">
                      <input type="file" class="form-control" name="image" placeholder="Image" />
@@ -319,7 +330,7 @@
                </div>
                <div class="row">
                   <div class="button btn" >
-                     <button class="button btn" type="submit">Valider</button>
+                     <button class="custom-button" type="submit">Valider</button>
                   </div>
                </div>
             </form>
@@ -375,11 +386,11 @@
          <div class="row">
             <div class="footer-logo">Vector Vision</div>
             <div class="social-link">
-               <a href=""><i class="fa fa-facebook"></i></a>
-               <a href=""><i class="fa fa-instagram"></i></a>
-               <a href=""><i class="fa fa-twitter"></i></a>
-               <a href=""><i class="fa fa-linkedin"></i></a>
-               <a href=""><i class="fa fa-github"></i></a>
+               <a href="https://www.facebook.com/profile.php?id=100092401990193"><i class="fa fa-facebook"></i></a>
+               <a href="https://instagram.com/dems1817?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"><i class="fa fa-instagram"></i></a>
+               <a href="https://twitter.com/adamasana226?t=ocA6VOo6UNkzi7Fb4Qgw8A&s=08"><i class="fa fa-twitter"></i></a>
+               <a href="https://www.linkedin.com/in/adama-sana-6a5556263"><i class="fa fa-linkedin"></i></a>
+               <a href="https://github.com/Adamasana"><i class="fa fa-github"></i></a>
             </div>
          </div>
       </div>

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Portfolio, Projet, Message, Commentaire
+from .models import Portfolio, Projet, Message, Commentaire, Actualite
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
@@ -46,3 +46,9 @@ def portfolio(request):
         portfolios = Portfolio.objects.all()
         context = {"portfolios": portfolios}
         return render(request, 'blog/portfolio.html', context=context)
+
+def actualite(request):
+    if request.method == "GET":
+        actualites = Actualite.objects.all()
+        context = {"actualites": actualites}
+        return render(request, 'blog/actualite.html', context=context)

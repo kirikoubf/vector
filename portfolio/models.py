@@ -65,3 +65,15 @@ class Message(models.Model):
 
     class Meta:
         ordering = ['-date']
+
+class Actualite(models.Model):
+    titre = models.TextField()
+    image = models.ImageField(upload_to='media', blank=True)
+    description = models.TextField(max_length=415)
+    date = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.titre
+
+    class Meta:
+        ordering = ['-date']

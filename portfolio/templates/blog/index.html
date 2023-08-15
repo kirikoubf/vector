@@ -1,0 +1,399 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta name="keywords" content="HTML, CSS, JavaScript">
+   <meta name="description"
+      content="A clean, beautiful and responsive portfolio template for Developers! using only Html, CSS, and JavaScript">
+   <meta name="author" content="Puskar Adhikari">
+   <title>Vector Vision By Adama SANA</title>
+   <link href="{% static 'css/header.css' %}" rel="stylesheet" />
+   <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+   <link href="{% static 'css/home.css' %}" rel="stylesheet" />
+   <link href="{% static 'css/about.css' %}" rel="stylesheet" />
+   <link href="{% static 'css/service.css' %}" rel="stylesheet" />
+   <link href="{% static 'css/portfolio.css' %}" rel="stylesheet" />
+   <link href="{% static 'css/testimonials.css' %}" rel="stylesheet" />
+   <link href="{% static 'css/blog.css' %}" rel="stylesheet" />
+   <link href="{% static 'css/contact.css' %}" rel="stylesheet" />
+   <link href="{% static 'css/footer.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+   <style>
+   .copyright {
+      margin-bottom: 0;
+   }
+   </style>
+   <header>
+      <div class="container">
+         <div class="row">
+            <div class="brand-name">
+               <a href="/" class="logo">Vector <span style="color: #ff0080;">Vision</span></a>
+            </div>
+            <div class="hamburger">
+               <i class="fa fa-bars"></i>
+            </div>
+            <div class="navbar">
+               <ul>
+                  <li><a href="#home" class="active">Acceuil</a></li>
+                  <li><a href="#about">Auteur</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                  <li><a href="#blog">Projet</a></li>
+                  <li><a href="#">Actualite</a></li>
+                  <li><a href="{% url 'message' %}">Contact</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </header>
+   <section class="home" id="home" style="background-image: url('/static/images/hero.png');">
+      <div class="container">
+         <div class="row full-screen">
+            <div class="home-content">
+               <div class="block">
+                  <h6>Hello, je reponds au nom de </h6>
+                  <h1>SANA Adama</h1>
+                  <h3>Je suis <span style="color: #ff0080; font-weight: bold;">designer</span> et <span style="color: #ff0080; font-weight: bold;">developer</span></h3>
+                  <div class="cv-btn">
+                     <a href="{% url 'message' %}">Me contacter</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section class="about" id="about">
+      <div class="container">
+         <div class="row">
+            <div class="title">
+               <h1>Presentation</h1>
+               <p>Savoir plus sur moi</p>
+            </div>
+         </div>
+         <div class="row">
+            <div class="about-content">
+               <div class="row">
+                  <div class="img">
+                     <img src="{% static 'images/me.png' %}" alt='me' />
+                  </div>
+                  <div class="text">
+                     <h4>Je suis Adama SANA</h4>
+                     <h6><span>Developer web</span> / <span>Designer graphique</span> et <span>Responsable Vector
+                           Vision</span> vivant au Burkina
+                        Faso / Ouagadougou
+                     </h6>
+                     <p style="text-align:justify;">Je suis un designer et développeur web passionné par la création et le développement d'expériences visuelles uniques et élégantes. Mon expertise en design graphique inclut la conception de flyers, de logos, de badges, de cartes, d'affiches..., ainsi que la création de maquettes d'applications et de sites web.
+                        Côté développement web, je suis spécialisé dans la création de sites web pour les petites et moyennes entreprises, qu'ils soient statiques ou dynamiques.
+                        Mon objectif est de créer des produits qui captivent et inspirent, en combinant mon savoir-faire en design graphique et en développement web pour offrir des solutions uniques et sur mesure à mes clients.
+                        Si vous avez besoin d'un design graphique créatif ou d'un site web professionnel, je serais ravi de vous aider à concrétiser vos idées et à donner vie à vos projets.
+                     </p>
+                     <div class="skills">
+                        <h6>Mes Outils Technologiques:</h6>
+                        <div class="skills-list">
+                           <ul class="fa-ul">
+                              <li><span class="fa-li"><i class="fas fa-check-square"></i></span>HTML5</li>
+                              <li><span class="fa-li"><i class="fas fa-check-square"></i></span>CSS3</li>
+                              <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Bootstrap</li>
+                              <li><span class="fa-li"><i class="fas fa-check-square"></i></span>TailwinCSS</li>
+                              <li><span class="fa-li"><i class="fas fa-check-square"></i></span>JavaScript</li>
+                              <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Django</li>
+                           </ul>
+                           <ul class="fa-ul">
+                              <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Adobe Photoshop</li>
+                              <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Adobe Illustrator</li>
+                              <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Adobe Premiere Pro</li>
+                              <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Adobe XD</li>
+                              <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Canva</li>
+                              <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Capcut</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="social">
+                        <a href=""><i class="fa fa-facebook"></i></a>
+                        <a href=""><i class="fa fa-twitter"></i></a>
+                        <a href=""><i class="fa fa-instagram"></i></a>
+                        <a href=""><i class="fa fa-github"></i></a>
+                        <a href=""><i class="fa fa-linkedin"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </section>
+   <section class="services" id="services">
+      <div class="container">
+<!--         <video autoplay muted loop>
+            <source src="{% static 'video/video.mp4' %}" type="video/mp4">
+        </video> -->
+         <div class="row">
+            <div class="title text-center">
+               <h1>Services</h1>
+            </div>
+         </div>
+         <div class="row">
+            <div class="service-content">
+               <div class="box">
+                  <div class="icon"><i class="fa fa-laptop"></i></div>
+                  <h5>Design Web</h5>
+                  <p style="text-align:justify">Designer et développeur web passionné offrant des interfaces innovantes et 
+                     plaisantes. Expériences utilisateur fluides et intuitives pour renforcer la présence en ligne 
+                     des clients. Créativité et expertise pour donner vie à votre vision digitale.
+                  </p>
+               </div>
+               <div class="box">
+                  <div class="icon"><i class="fa fa-code"></i></div>
+                  <h5>Developpement Web</h5>
+                  <p style="text-align:justify">Expert en développement web, je crée des sites web évolutifs 
+                     et économiquement viables qui boostent votre activité. Du développement de pages statiques
+                      aux sites eCommerce complets, je vous offre une solution adaptée à vos besoins.
+                  </p>
+               </div>
+               <div class="box">
+                  <div class="icon"><i class="fas fa-palette"></i></div>
+                  <h5>Infographie</h5>
+                  <p style="text-align:justify">Expert en infographie créative, je réalise des designs uniques tels que des logos, 
+                     flyers, badges et maquettes d'applications. Si vous avez besoin d'un design graphique 
+                     créatif, je suis là pour concrétiser vos idées et donner vie à vos projets.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section class="portfolio" id="portfolio">
+      <div class="container">
+         <div class="row">
+            <div class="title text-center">
+               <h1>Portfolio</h1>
+            </div>
+         </div>
+         <div class="row">
+            <div class="filter-btn">
+               <ul id="filterBtn">
+                  <li class="active" data-target="all">All</li>
+                  <li data-target="ui">Infographie</li>
+                  <li data-target="web">Web Design</li>
+                  <li data-target="app">Developpement Web</li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="gallery">
+            {% for portfolio in portfolios %}
+               {% if forloop.counter <= 6 %}
+                  <div class="item" data-id="{{ portfolio.categorie }}">
+                     <div class="inner">
+                        <img src="{{ portfolio.image.url }}" alt="portfolio" />
+                        <div class="overlay">
+                           <span class="fa fa-plus"></span>
+                           <h4>{{ portfolio.nom }}</h4>
+                        </div>
+                     </div>
+                  </div>
+               {% endif %}
+            {% endfor %}
+            </div>
+         </div>
+         
+      </div>
+   </section>
+   <section class="message">
+      <div class="container">
+         <div class="row align-items-center">
+            <div class="message-text">
+               <h2>Ma boîte de réception est toujours ouverte. Que ce soit pour poser une question, 
+                  discuter d'une collaboration ou me proposer un projet, je ferai de mon mieux pour 
+                  vous répondre le plus vite possible !</h2>
+            </div>
+            <div class="button ">
+               <a href="{% url 'message' %}">Me contacter</a>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="blog" id="blog">
+      <div class="container">
+         <div class="row">
+            <div class="title text-center">
+               <h1>Projets</h1>
+            </div>
+         </div>
+         <div class="row">
+            <div class="blog-content">
+            {% for projet in projets %}
+               <div class="blog-box">
+                  <div class="blog-img">
+                     <img src='{{ projet.image.url }}' />
+                  </div>
+                  <div class="blog-text">
+                     <div class="blog-info">
+                        <span>{{ projet.date }}</span>
+                        <span>{{ projet.categorie }}</span>
+                     </div>
+                     <h3>{{ projet.nom }}</h3>
+                     <p>{{ projet.description }}</p>
+                     <a href="https://devpuskar.netlify.app/blogs/04git">Consulter</a>
+                  </div>
+               </div>
+            {% endfor %}
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="testimonials" style="padding: 0;">
+      <div class="container">
+         <div class="row">
+            <div class="title text-center">
+               <h1>Commentaires</h1>
+            </div>
+         </div>
+         <div class="row">
+            <div class="testimonials-content">
+               <div class="testimonials-box">
+                  {% for commentaire in commentaires %}
+                  <div class="testimonials-img">
+                      <div class="test-img">
+                          {% if commentaire.image %}
+                              <img src="{{ commentaire.image.url }}" />
+                          {% else %}
+                              <!-- Mettez ici l'URL de l'image par défaut -->
+                              <img src="/media/media/me.png" />
+                          {% endif %}
+                      </div>
+                      <div class="testimonials-text">
+                          <h6>{{ commentaire.nom }}</h6>
+                          <p>{{ commentaire.commentaire }}</p>
+                          <p style="margin-top: 10px;">{{ commentaire.date }}</p>
+                      </div>
+                  </div>
+              {% endfor %}
+               </div>
+               <div class="slider"></div>
+            </div>
+         </div>
+      </div>
+
+      <section>
+   <div class="container">
+      <div class="row">
+         <div class="title text-center">
+            <h1>Commentez !</h1>
+         </div>
+      </div>
+      <div class="row">
+         <div class="contact-form" style="margin-bottom: 10px;">
+            <div class="row">
+               <div class="contact-text">
+                  <h2>Laissez un commentaire</h2>
+                  <p>Le nom, l'image et le message seront affichés. Cependant, viablesous n'êtes pas obligé de mettre votre propre photo.</p>
+               </div>
+            </div>
+            
+            <form method="POST" enctype="multipart/form-data">
+               {% csrf_token %}
+               <div class="row space-between">
+                  <div class="col-12">
+                     <input type="text" class="form-control" name="nom" placeholder="Nom et prénom" maxlength="25" required />
+                  </div>
+               </div>
+               <div class="row space-between">
+                  <div class="col-6">
+                     <input type="text" class="form-control" name="telephone" placeholder="Téléphone" maxlength="15" required />
+                  </div>
+                  <div class="col-6">
+                     <input type="file" class="form-control" name="image" placeholder="Image" />
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-12">
+                     <textarea class="form-control" name="commentaire" placeholder="Votre commentaire" maxlength="80" required></textarea>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="button btn" >
+                     <button class="button btn" type="submit">Valider</button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</section>
+
+
+
+<!--
+   <section class="contact" id="contact">
+      <div class="container">
+         <div class="row">
+            <div class="title text-center">
+               <h1>Me contacter</h1>
+            </div>
+         </div>
+         
+         <div class="row">
+            <div class="contact-form">
+               <div class="row">
+                  <div class="contact-text">
+                     <h2>Laissez un message</h2>
+                     <p>Mon inbox est ouvert a tous! N'hesitez pas a me contacter !!!... </p>
+                  </div>
+               </div>
+               <div class="row space-between" method="POST">
+                  <div class="col-6">
+                     <input type="text" class="form-control" name="nom" placeholder="Nom et Prenom" />
+                  </div>
+                  <div class="col-6">
+                     <input type="text" class="form-control" name="identifiant" placeholder="Telephone/Email" />
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-12">
+                     <textarea class="form-control" name="message" placeholder="Le message"></textarea>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="button btn">
+                     <a href="#" type="submit">Envoyer</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </div>
+   </section> -->
+   <footer>
+      <div class="container">
+         <div class="row">
+            <div class="footer-logo">Vector Vision</div>
+            <div class="social-link">
+               <a href=""><i class="fa fa-facebook"></i></a>
+               <a href=""><i class="fa fa-instagram"></i></a>
+               <a href=""><i class="fa fa-twitter"></i></a>
+               <a href=""><i class="fa fa-linkedin"></i></a>
+               <a href=""><i class="fa fa-github"></i></a>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <section class="copyright">
+      <div class="container">
+         <p>© <span id="year"></span> | Designed and Developed By Adama SANA. | All rights reserved.</p>
+      </div>
+   </section>
+   <div class="lightbox hide">
+      <span class="close-lightbox fa fa-close"></span>
+      <img src="" alt="portfolio" />
+   </div>
+   <script src="{% static 'js/app.js' %}"></script>
+</body>
+
+</html>

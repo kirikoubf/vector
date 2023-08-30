@@ -38,15 +38,15 @@
                <i class="fa fa-bars"></i>
             </div>
             <div class="navbar">
-               <ul>
-                  <li><a href="{% url 'acceuil' %}" style="color:black" class="active">Accueil</a></li>
-                  <li><a href="/#about" style="color:black">Auteur</a></li>
-                  <li><a href="/#services" style="color:black">Services</a></li>
-                  <li><a href="{% url 'portfolio' %}" style="color:black">Portfolio</a></li>
-                  <li><a href="/#blog" style="color:black">Projets</a></li>
-                  <li><a href="{% url 'actualites' %}" style="color:black">Actualites</a></li>
-                  <li><a href="{% url 'message' %}" style="color:black">Contact</a></li>
-               </ul>
+                <ul>
+                    <li><a href="{% url 'acceuil' %}" style="color:black" class="active">Accueil</a></li>
+                    <li><a href="/#about" style="color:black">Auteur</a></li>
+                    <li><a href="/#services" style="color:black">Services</a></li>
+                    <li><a href="{% url 'portfolio' %}" style="color:black">Portfolio</a></li>
+                    <li><a href="/#blog" style="color:black">Projets</a></li>
+                    <li><a href="{% url 'actualites' %}" style="color:black">Actualites</a></li>
+                    <li><a href="{% url 'message' %}" style="color:black">Contact</a></li>
+                </ul>
             </div>
          </div>
       </div>
@@ -56,33 +56,32 @@
     <div class="container">
        <div class="row">
           <div class="title text-center">
-             <h1>Portfolio</h1>
+             <h1>Tout les conceptions</h1>
           </div>
        </div>
        <div class="row">
           <div class="filter-btn">
              <ul id="filterBtn">
                 <li class="active" data-target="all">All</li>
-                <li data-target="ui">Infographie</li>
-                <li data-target="web">Web Design</li>
-                <li data-target="app">Developpement Web</li>
              </ul>
           </div>
        </div>
 
        <div class="row">
           <div class="gallery">
-          {% for portfolio in portfolios %}
-                <div class="item" data-id="{{ portfolio.categorie }}">
-                   <div class="inner">
-                      <img src="{{ portfolio.image.url }}" alt="portfolio" />
-                      <div class="overlay">
-                         <span class="fa fa-plus"></span>
-                         <h4>{{ portfolio.nom }}</h4>
-                      </div>
-                   </div>
-                </div>
-          {% endfor %}
+            {% if image_actualites %}
+                {% for image in image_actualites %}
+                    <div class="item" data-id="{{ portfolio.categorie }}">
+                        <div class="inner">
+                            <img src="{{ image.image.url }}" alt="portfolio" />
+                            <div class="overlay">
+                                <span class="fa fa-plus"></span>
+                                <h4>{{ image.titre }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {%endif%}
           </div>
        </div>
        

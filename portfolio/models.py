@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.db.models.fields.related import ForeignKey
 
 # Create your models here.
@@ -27,6 +28,7 @@ class Projet(models.Model):
     nom = models.TextField()
     description = models.TextField()
     slug = models.SlugField()
+    lien = models.TextField(default="/")
     CATEGORIE_CHOICES = [
         ("web development", "web development"),
     ]
@@ -67,6 +69,23 @@ class Message(models.Model):
         ordering = ['-date']
 
 class Actualite(models.Model):
+    parto = models.TextField(default="Vector-Vision")
+    titre = models.TextField()
+    image = models.ImageField(upload_to='media', blank=True)
+    description = models.TextField(max_length=415)
+    date = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.titre
+    
+    def get_absolute_url(self):
+        return reverse('parto', args=[str(self.id)])
+
+    class Meta:
+        ordering = ['-date']
+
+class ImageActualite(models.Model):
+    post = models.ForeignKey("Actualite", related_name="images", on_delete=models.CASCADE)
     titre = models.TextField()
     image = models.ImageField(upload_to='media', blank=True)
     description = models.TextField(max_length=415)

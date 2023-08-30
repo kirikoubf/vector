@@ -50,12 +50,12 @@
             </div>
             <div class="navbar">
                <ul>
-                  <li><a href="#home" class="active">Acceuil</a></li>
+                  <li><a href="#home" class="active">Accueil</a></li>
                   <li><a href="#about">Auteur</a></li>
                   <li><a href="#services">Services</a></li>
                   <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
-                  <li><a href="#blog">Projet</a></li>
-                  <li><a href="{% url 'actualites' %}">Actualite</a></li>
+                  <li><a href="#blog">Projets</a></li>
+                  <li><a href="{% url 'actualites' %}">Actualites</a></li>
                   <li><a href="{% url 'message' %}">Contact</a></li>
                </ul>
             </div>
@@ -93,7 +93,7 @@
                      <img src="{% static 'images/me.png' %}" alt='me' />
                   </div>
                   <div class="text">
-                     <h4>Je suis Adama SANA</h4>
+                     <h4>Adama SANA</h4>
                      <h6><span>Developer web</span> / <span>Designer graphique</span> et <span>Responsable Vector
                            Vision</span> vivant au Burkina
                         Faso / Ouagadougou
@@ -250,7 +250,7 @@
                      </div>
                      <h3>{{ projet.nom }}</h3>
                      <p>{{ projet.description }}</p>
-                     <a href="https://devpuskar.netlify.app/blogs/04git">Consulter</a>
+                     <a href="{{ projet.lien }}">Consulter</a>
                   </div>
                </div>
             {% endfor %}

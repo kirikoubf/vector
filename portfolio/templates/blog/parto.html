@@ -24,82 +24,8 @@
 
 <body>
    <style>
-   
    .copyright {
       margin-bottom: 0;
-   }
-   .body {
-      
-      min-height: 100vh;
-      justify-content: center;
-      align-items: center;
-   }
-
-   .main-box {
-      width: 90%;
-      height: 40vh; /* 40% of viewport height */
-      border: 1px solid #000;
-      display: flex;
-      margin-top: 15px; /* Ajout d'une marge entre les boîtes */
-      align-items: center;
-      margin-left:5%;
-   }
-
-   .image-box {
-      width: 25%; /* 80% of height of main-box */
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top:15px
-   }
-   img {
-      height:100%;
-      width:100%;
-   }
-   .image {
-      width: 80%;
-      height: 80%;
-   }
-
-   .content-box {
-      flex: 1;
-      padding: 10px;
-   }
-
-   h1, p, .date {
-      margin: 0;
-      margin-top: 15px;
-   }
-
-   .date {
-      margin-top: 15px;
-      font-weight:bold;
-      text-align:right;
-      font-size:15px
-   }
-
-   @media (max-width: 768px) {
-      .main-box {
-         flex-direction: column;
-         height: auto;
-         width: 100%;
-         height:100%;
-         margin-left:-2px;
-      }
-      .image-box {
-         width: 80%;
-         height:80%;
-      }
-      .image {
-         width: 80%;
-         height: 80%;
-      }
-      .date{
-         text-align:right;
-         font-size:13px
-      }
-   
    }
    </style>
    <header>
@@ -114,10 +40,7 @@
             <div class="navbar">
                <ul>
                   <li><a href="{% url 'acceuil' %}" style="color:black" class="active">Accueil</a></li>
-                  <li><a href="/#about" style="color:black">Auteur</a></li>
-                  <li><a href="/#services" style="color:black">Services</a></li>
                   <li><a href="{% url 'portfolio' %}" style="color:black">Portfolio</a></li>
-                  <li><a href="/#blog" style="color:black">Projets</a></li>
                   <li><a href="{% url 'actualites' %}" style="color:black">Actualites</a></li>
                   <li><a href="{% url 'message' %}" style="color:black">Contact</a></li>
                </ul>
@@ -125,33 +48,41 @@
          </div>
       </div>
    </header>
-   <section class="body">
-      <section class="portfolio" id="portfolio">
-         <div class="container">
-            <div class="row">
-               <div class="title text-center">
-                  <h1>Actualites</h1>
-               </div>
-            </div>
-         {% for actualite in actualites %}
-            <div class="main-box" onclick="window.location='{% url 'profil_actualite' actu_id=actualite.pk %}';" style="cursor: pointer;">
-               <div class="image-box">
-                  <div class="image"><img src="{{ actualite.image.url }}"></div>
-               </div>
-               <div class="content-box">
-                  <h1 style="color: #022369;">{{actualite.titre}}</h1>
-                  <p>{{actualite.description}}</p>
-                  <p>
-                     <!--<a href="{% url 'parto' %}" style="color:#5f88e0; font-weight:900; font-size:17px; text-decoration:underline" class="consulter-btn">Consulter</a> -->
-                        <h4 style="color:#5f88e0; text-decoration: underline;"> Consulter </h4>
-                     </p>
-                  <p class="date" style="color: #022369;">{{actualite.date}}</p>
-               </div>
-            </div>
-         {% endfor %}
-   </section>
 
-   <footer>
+   <section class="portfolio" id="portfolio">
+    <div class="container">
+       <div class="row">
+          <div class="title text-center">
+             <h1>Portfolio</h1>
+          </div>
+       </div>
+       <div class="row">
+          <div class="filter-btn">
+             <ul id="filterBtn">
+                <li class="active" data-target="all">All</li>
+             </ul>
+          </div>
+       </div>
+
+       <div class="row">
+          <div class="gallery">
+          {% for image in imageactualites %}
+                <div class="item" data-id="{{ portfolio.categorie }}">
+                   <div class="inner">
+                      <img src="{{ image.image.url }}" alt="portfolio" />
+                      <div class="overlay">
+                         <span class="fa fa-plus"></span>
+                         <h4>{{ image.titre }}</h4>
+                      </div>
+                   </div>
+                </div>
+          {% endfor %}
+          </div>
+       </div>
+       
+    </div>
+ </section>
+ <footer>
     <div class="container">
        <div class="row">
           <div class="footer-logo">Vector Vision</div>
@@ -175,6 +106,6 @@
     <img src="" alt="portfolio" />
  </div>
  <script src="{% static 'js/app.js' %}"></script>
-
 </body>
+
 </html>

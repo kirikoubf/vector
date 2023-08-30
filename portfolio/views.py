@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Portfolio, Projet, Message, Commentaire, Actualite
+from .models import Portfolio, Projet, Message, Commentaire, Actualite, ImageActualite
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
@@ -52,3 +52,21 @@ def actualite(request):
         actualites = Actualite.objects.all()
         context = {"actualites": actualites}
         return render(request, 'blog/actualite.html', context=context)
+
+def imageactualite(request):
+    if request.method == "GET":
+        imageactualites = ImageActualite.objects.all()
+        context = {"imageactualites": imageactualites}
+        return render(request, 'blog/parto.html', context=context)
+
+
+def profil_actualite(request, actu_id):
+    actualite = Actualite.objects.get(pk=actu_id)
+    image_actualites = ImageActualite.objects.filter(post=actualite)
+
+    context = {
+        'actualite': actualite,
+        'image_actualites': image_actualites,
+    }
+
+    return render(request, 'blog/profilactualite.html', context=context)
